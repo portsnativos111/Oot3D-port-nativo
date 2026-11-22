@@ -14,28 +14,38 @@
         android:textColor="#D4AF37"
         android:textSize="22sp"
         android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona tu ROM y SingleScreen 3.2.2 ya guardados en el dispositivo"
+        android:textColor="#CCCCCC"
+        android:textSize="14sp"
+        android:gravity="center"
         android:layout_marginBottom="24dp"/>
 
     <Button
         android:id="@+id/btnSelectRom"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="1. Seleccionar ROM OoT 3DS (.3ds / .cia)"
+        android:text="1. Ubicar mi ROM OoT 3DS"
         android:layout_marginBottom="12dp"/>
 
     <Button
         android:id="@+id/btnSelectPatch"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="2. Seleccionar SingleScreen 3.2.2 (.zip)"
+        android:text="2. Ubicar mi SingleScreen 3.2.2"
         android:layout_marginBottom="24dp"/>
 
     <TextView
         android:id="@+id/txtStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estado: Esperando archivos..."
+        android:text="Estado: Falta ubicar ROM y mod"
         android:textColor="#AAAAAA"
+        android:gravity="center"
         android:layout_marginBottom="24dp"/>
 
     <Button
