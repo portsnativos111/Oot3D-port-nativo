@@ -1,0 +1,2 @@
+rootProject.name = "PuertoZeldaOot3D"
+include ':app'
