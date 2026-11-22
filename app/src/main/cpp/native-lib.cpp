@@ -9,15 +9,18 @@ extern "C" JNIEXPORT void JNICALL
 Java_com_portsnativos111_oot3dport_MainActivity_startNativeEngine(
         JNIEnv* env,
         jobject /* this */,
-        jstring internalFilesPath) {
+        jstring romUriStr,
+        jstring patchUriStr) {
 
-    const char *path = env->GetStringUTFChars(internalFilesPath, nullptr);
-    std::string basePath(path);
-    std::string romPath = basePath + "/oot3d_base.rom";
-    std::string patchPath = basePath + "/SingleScreen_3.2.2.zip";
+    const char *romChars = env->GetStringUTFChars(romUriStr, nullptr);
+    const char *patchChars = env->GetStringUTFChars(patchUriStr, nullptr);
 
-    LOGI("Arrancando motor con ROM en: %s", romPath.c_str());
-    LOGI("Aplicando mod SingleScreen desde: %s", patchPath.c_str());
+    std::string romUri(romChars);
+    std::string patchUri(patchChars);
 
-    env->ReleaseStringUTFChars(internalFilesPath, path);
+    LOGI("ROM URI: %s", romUri.c_str());
+    LOGI("SingleScreen URI: %s", patchUri.c_str());
+
+    env->ReleaseStringUTFChars(romUriStr, romChars);
+    env->ReleaseStringUTFChars(patchUriStr, patchChars);
 }
