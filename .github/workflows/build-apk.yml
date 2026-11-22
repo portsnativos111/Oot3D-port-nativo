@@ -2,7 +2,7 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ "principal" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,9 @@ jobs:
           java-version: '17'
 
       - name: Configurar Android SDK y NDK
-        uses: android-actions/setup-android@v3
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0" "ndk-bundle"
 
       - name: Generar wrapper de Gradle y compilar APK
         run: |
